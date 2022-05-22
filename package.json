@@ -10,6 +10,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@apollo/client": "^3.6.4",
+    "@vue/apollo-composable": "^4.0.0-alpha.17",
+    "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
     "storybook": "^6.4.22",
     "vue": "^3.2.25",
     "vue-i18n": "^9.1.9"
