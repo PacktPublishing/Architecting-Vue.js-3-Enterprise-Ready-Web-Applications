@@ -1,103 +1,212 @@
 <template>
   <header>
-    <div class="wrapper">
-      <div>
-        <svg
-          width="32"
-          height="32"
-          viewBox="0 0 32 32"
-          xmlns="http://www.w3.org/2000/svg"
+    <nav class="h-20">
+      <!-- ================================TOP NAVBAR================================== -->
+      <div
+        class="
+          bg-black
+          h-3/4
+          px-4
+          py-2
+          text-white
+          flex
+          justify-between
+          items-center
+        "
+      >
+        <div>
+          <p class="font-semibold">
+            See anything you don't like? Let's edit your home feed!
+          </p>
+        </div>
+        <div class="flex justify-between items-center">
+          <Button appearance="tertiary" label="Not now"> </Button>
+          <Button appearance="tertiary" label="Edit my home feed"></Button>
+        </div>
+      </div>
+      <!-- ==============================END=OF=TOP NAVBAR================================== -->
+
+      <!-- ============================NAVBAR=ICONS================================================================ -->
+
+      <div class="bg-green h-full px-4 py-2 flex items-center">
+        <!-- ================PRINTEREST==LOGO==ICON============================= -->
+
+        <!-- ================================HOME==ICON=================================== -->
+
+        <Button label="Home"> </Button>
+
+        <!-- =============================END=OF==HOME==ICON=================================== -->
+        <div class="ml-2">
+          <Button type="menu" label="Create">
+            <template #icon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                style="fill: rgba(0, 0, 0, 1); transform: ; msfilter: "
+              >
+                <path
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </template>
+          </Button>
+          <div class="bg-white w-44 rounded-lg shadow-lg hidden">
+            <div class="py-2">
+              <div
+                class="
+                  hover:bg-slate-100
+                  transition
+                  duration-300
+                  mx-2
+                  px-2
+                  py-1.5
+                  rounded-lg
+                "
+              >
+                <p class="text-black font-semibold text-md">Create Idea Pin</p>
+              </div>
+              <div
+                class="
+                  hover:bg-slate-100
+                  transition
+                  duration-300
+                  mx-2
+                  px-2
+                  py-1.5
+                  rounded-lg
+                "
+              >
+                <p class="text-black font-semibold text-md">Create Pin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- -----------------------------------------SEARCH BOX-------------- -->
+        <SearchField />
+        <!-- -----------------------------------------SEARCH BOX-------------- -->
+
+        <!-- =================NOTIFICATION==ICON======================== -->
+
+        <div
+          class="
+            h-11
+            w-11
+            hover:bg-slate-100
+            transition
+            duration-300
+            rounded-full
+            flex
+            justify-center
+            items-center
+            ml-2
+            relative
+          "
         >
-          <g fill="none" fill-rule="evenodd">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            style="fill: rgb(163, 159, 159); transform: ; msfilter: "
+          >
             <path
-              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
-              fill="#FFF"
-            />
+              d="M12 22a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22zm7-7.414V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v4.586l-1.707 1.707A.996.996 0 0 0 3 17v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-1a.996.996 0 0 0-.293-.707L19 14.586z"
+            ></path>
+          </svg>
+          <div class="bg-red-500 absolute top-0.5 right-0 rounded-md">
+            <p class="text-white text-xs font-semibold">99+</p>
+          </div>
+        </div>
+        <!-- ===========END==OF====NOTIFICATION==ICON======================== -->
+
+        <!-- =======================MESSAGE=ICON=========================== -->
+
+        <div
+          class="
+            h-11
+            w-11
+            hover:bg-slate-100
+            transition
+            duration-300
+            rounded-full
+            flex
+            justify-center
+            items-center
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            style="fill: rgb(163, 159, 159); transform: ; msfilter: "
+          >
             <path
-              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
-              fill="#555AB9"
-            />
-            <path
-              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
-              fill="#91BAF8"
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+              d="M12 2C6.486 2 2 5.589 2 10c0 2.908 1.897 5.516 5 6.934V22l5.34-4.004C17.697 17.852 22 14.32 22 10c0-4.411-4.486-8-10-8zm-2.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+            ></path>
+          </svg>
+        </div>
+        <!-- =====================END=OF=MESSAGE=ICON=========================== -->
+
+        <!-- ===============================================================USER===ICON================== -->
+
+        <div
+          class="
+            h-11
+            w-11
+            hover:bg-slate-100
+            transition
+            duration-300
+            rounded-full
+            flex
+            justify-center
+            items-center
+          "
+        >
+          <div
+            class="w-2/4 h-2/4 rounded-full flex justify-center items-center"
+            style="background-color: rgb(180, 175, 175)"
+          >
+            <p class="text-xs">s</p>
+          </div>
+        </div>
+        <!-- ===========================================================END==OF==USER===ICON================== -->
+
+        <!-- ===================================MORE OPTIONS=ICON=================================== -->
+
+        <div class="">
+          <Button appearance="icon">
+            <template #icon>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                style="fill: rgb(163, 159, 159); transform: ; msfilter: "
+              >
+                <path
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
+            </template>
+          </Button>
+          <div class="bg-black w-16 rounded-lg shadow-lg hidden">
+            <div class="py-2">
+              <div class="px-2 py-1.5 rounded-lg">
+                <p class="text-white text-xs">account and more options</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ============================END==OF=====MORE OPTIONS=ICON=================================== -->
       </div>
-      <div>
-        <my-button
-          size="small"
-          @click="$emit('logout')"
-          label="Log out"
-          v-if="user"
-        />
-        <my-button
-          size="small"
-          @click="$emit('login')"
-          label="Log in"
-          v-if="!user"
-        />
-        <my-button
-          primary
-          size="small"
-          @click="$emit('createAccount')"
-          label="Sign up"
-          v-if="!user"
-        />
-      </div>
-    </div>
+
+      <!-- =========================END==OF=NAVBAR=ICONS================================================================ -->
+    </nav>
   </header>
 </template>
 
-<script>
-import MyButton from "../atoms/Button.vue";
-
-export default {
-  name: "my-header",
-
-  components: { MyButton },
-
-  props: {
-    user: {
-      type: Object,
-    },
-  },
-
-  emits: ["login", "logout", "createAccount"],
-};
+<script setup>
+import Button from '../atoms/Button.vue';
+import SearchField from '../molecules/SearchField.vue';
 </script>
 <style scoped>
-.wrapper {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-svg {
-  display: inline-block;
-  vertical-align: top;
-}
-
-h1 {
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 1;
-  margin: 6px 0 6px 10px;
-  display: inline-block;
-  vertical-align: top;
-}
-
-button + button {
-  margin-left: 10px;
-}
-
-.welcome {
-  color: #333;
-  font-size: 14px;
-  margin-right: 10px;
-}
 </style>

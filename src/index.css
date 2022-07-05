@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --card_width: 230px;
+    --card_border_radius: 16px;
+    --row_increment: 10px;
+    --card_small: 26;
+    --card_medium: 33;
+    --card_large: 45;
+    --card_smaller: 17.7;
+}
+
+
+.pin_container {
+    margin: 0 10px;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-template-rows: var(--row_increment);
+    align-items: center;
+
+}
+
+.card {
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+    background-color: red;
+}
+
+.card_small {
+    grid-row-end: span var(--card_small);
+}
+
+.card_smaller {
+    grid-row-end: span var(--card_small);
+}
+
+.card_medium {
+    grid-row-end: span var(--card_medium);
+}
+
+.card_large {
+    grid-row-end: span var(--card_large);
+}

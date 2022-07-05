@@ -1,22 +1,18 @@
 <template>
   <form @submit.prevent="login">
-    <label for="fname">Email</label>
-    <input
+    <TextField
       v-model="email"
       required
       type="email"
-      class="mb-6"
       name="email"
       label="Email Address"
       placeholder="Enter your email address"
     />
 
-    <label for="lname">Password</label>
-    <input
+    <TextField
       v-model="password"
       required
       minlength="6"
-      class="mb-6"
       type="password"
       maxlength="50"
       placeholder="Enter your full password"
@@ -25,7 +21,9 @@
 
     <input type="checkbox" id="remember" v-model="remember" />Remember me
 
-    <input type="submit" value="Submit" />
+    <div class="w-full pt-5">
+      <Button type="submit" label="Submit" />
+    </div>
 
     <p style="color: green" v-if="logged">Logged in successfully</p>
   </form>
@@ -35,6 +33,8 @@
 import { useMutation } from '@vue/apollo-composable';
 import { ref } from 'vue';
 import { LOGIN_USER } from '../../graphql';
+import TextField from '../atoms/TextField.vue';
+import Button from '../atoms/Button.vue';
 
 const email = ref('');
 const password = ref('');
