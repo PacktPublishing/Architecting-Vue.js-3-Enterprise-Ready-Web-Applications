@@ -11,6 +11,3 @@
 import Header from '../organisms/Header.vue';
 import Cards from '../organisms/Cards.vue';
 </script>
-
-<style>
-</style>

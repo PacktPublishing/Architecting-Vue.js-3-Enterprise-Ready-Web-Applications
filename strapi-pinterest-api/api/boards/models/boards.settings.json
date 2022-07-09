@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boards",
+  "info": {
+    "name": "boards"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "boards"
+    },
+    "photos": {
+      "collection": "photos",
+      "via": "board"
+    }
+  }
+}
