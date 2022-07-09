@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "users",
+  "info": {
+    "name": "users"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "password": {
+      "type": "password"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}
