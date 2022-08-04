@@ -1,0 +1,71 @@
+version: "3.5"
+
+services:
+
+  api:
+
+    build:
+
+      context: .
+
+      dockerfile: Dockerfile
+
+      args:
+        PACKAGE_PATH: backend
+        WORKING_DIR: /usr/src/
+
+    expose:
+      - 1337
+
+    ports:
+      - 1337:1337
+
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=1337
+      - BASE_URL=http://api:1337
+
+    env_file:
+      - ./.env
+
+    volumes:
+      - ./backend:/usr/src
+
+    command: >
+      sh -c "npm install"
+
+  frontend:
+
+    build:
+
+      context: .
+
+      dockerfile: Dockerfile
+
+      args:
+        PACKAGE_PATH: frontend
+        WORKING_DIR: /usr/src/
+
+    expose:
+      - 3000
+
+    ports:
+      - 3000:3000
+
+    environment:
+      - APP_ENV=production
+      - APP_BACKEND=http://0.0.0.0:1337/api
+      - NODE_PATH=/usr/src/
+      - APP_TOKEN=eyJhbGciOiJIUzI1NiJ9.c29sb[STRAPI_TOKEN]
+
+    env_file:
+      - ./common.env
+
+    volumes:
+      - ./frontend:/usr/src
+
+    depends_on:
+      - api
+
+    command: [ "npm", "start" ]
