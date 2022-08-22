@@ -709,7 +709,7 @@
 </template>
 
 <script setup>
-import Button from '../atoms/Button.vue';
+import Button from '../atoms/Button/Button.vue';
 </script>
 
 <style>

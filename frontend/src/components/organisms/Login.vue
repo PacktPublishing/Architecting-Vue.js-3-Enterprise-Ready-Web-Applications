@@ -33,8 +33,8 @@
 import { useMutation } from '@vue/apollo-composable';
 import { ref } from 'vue';
 import { LOGIN_USER } from '../../graphql';
-import TextField from '../atoms/TextField.vue';
-import Button from '../atoms/Button.vue';
+import TextField from '../atoms/TextField/TextField.vue';
+import Button from '../atoms/Button/Button.vue';
 
 const email = ref('');
 const password = ref('');

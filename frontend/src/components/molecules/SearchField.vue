@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import TextField from '../atoms/TextField.vue';
+import TextField from '../atoms/TextField/TextField.vue';
 </script>
 
 <style>
