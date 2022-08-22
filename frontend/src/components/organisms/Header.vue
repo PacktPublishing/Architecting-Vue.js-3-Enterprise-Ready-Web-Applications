@@ -205,7 +205,7 @@
 </template>
 
 <script setup>
-import Button from '../atoms/Button/Button.vue';
+import Button from '../atoms/Button.vue';
 import SearchField from '../molecules/SearchField.vue';
 </script>
 <style scoped>
