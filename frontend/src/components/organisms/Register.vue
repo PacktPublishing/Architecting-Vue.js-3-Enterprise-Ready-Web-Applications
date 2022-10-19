@@ -36,13 +36,13 @@
 </template>
 
 <script>
-import { REGISTER } from "../../graphql";
+import { REGISTER } from '../../graphql';
 
 export default {
   setup(props) {
-    const email = ref("");
-    const password = ref("");
-    const name = ref("");
+    const email = ref('');
+    const password = ref('');
+    const name = ref('');
 
     const { mutate: registerUser } = useMutation(REGISTER, () => ({
       variables: {
