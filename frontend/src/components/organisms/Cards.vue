@@ -75,23 +75,23 @@
 </template>
 
 <script setup>
-// import { useQuery } from '@vue/apollo-composable';
-// import { GET_PINS } from '../../graphql/photos/queries';
+import { useQuery } from '@vue/apollo-composable';
+import { GET_PINS } from '../../graphql/photos/queries';
 import Card from '../molecules/Card.vue';
 
-// const { query: getPins } = useQuery(GET_PINS, () => ({
-//   variables: {
-//     size: 20,
-//     skip: 0,
-//     filters: {
-//       boardId: board.id,
-//     },
-//   },
-// }));
+const { query: getPins } = useQuery(GET_PINS, () => ({
+  variables: {
+    size: 20,
+    skip: 0,
+    filters: {
+      boardId: board.id,
+    },
+  },
+}));
 
-// const getBoardPins = () => {
-//   return getPins();
-// };
+const getBoardPins = () => {
+  return getPins();
+};
 </script>
 
 <style>
