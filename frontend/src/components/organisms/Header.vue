@@ -205,8 +205,14 @@
 </template>
 
 <script setup>
-import Button from '../atoms/Button.vue';
-import SearchField from '../molecules/SearchField.vue';
+import Button from "../atoms/Button.vue";
+import SearchField from "../molecules/SearchField.vue";
+</script>
+
+<script >
+export default {
+  name: "HeaderComponent",
+};
 </script>
 <style scoped>
 </style>

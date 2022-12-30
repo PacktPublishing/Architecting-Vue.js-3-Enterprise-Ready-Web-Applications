@@ -7,7 +7,7 @@
     </span>
   </button>
 
-  <button v-else :class="classes" @click="onClick" :style="style">
+  <button v-else :class="classes" :style="style" @click="onClick">
     <span v-if="$slots.icon">
       <slot name="icon" />
     </span>
@@ -19,7 +19,7 @@
 import { reactive, computed } from 'vue';
 
 export default {
-  name: 'my-button',
+  name: 'MyButton',
 
   props: {
     label: {
