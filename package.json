@@ -12,6 +12,8 @@
   "dependencies": {
     "@apollo/client": "^3.6.4",
     "@vue/apollo-composable": "^4.0.0-alpha.17",
+    "cypress": "^12.2.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "graphql": "^16.5.0",
     "graphql-tag": "^2.12.6",
     "storybook": "^6.4.22",
