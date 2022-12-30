@@ -1,5 +1,5 @@
 {
-  "name": "strapi-pinterest-api",
+  "name": "backend",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,28 +11,21 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "strapi": "3.6.10",
-    "strapi-admin": "3.6.10",
-    "strapi-utils": "3.6.10",
-    "strapi-plugin-content-type-builder": "3.6.10",
-    "strapi-plugin-content-manager": "3.6.10",
-    "strapi-plugin-users-permissions": "3.6.10",
-    "strapi-plugin-email": "3.6.10",
-    "strapi-plugin-upload": "3.6.10",
-    "strapi-plugin-i18n": "3.6.10",
-    "strapi-connector-bookshelf": "3.6.10",
-    "knex": "0.21.18",
-    "sqlite3": "5.0.0"
+    "@strapi/plugin-graphql": "^4.5.5",
+    "@strapi/plugin-i18n": "4.5.5",
+    "@strapi/plugin-users-permissions": "4.5.5",
+    "@strapi/strapi": "4.5.5",
+    "better-sqlite3": "7.4.6"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "c957a736-2bd6-4050-98bc-857962c8c613"
+    "uuid": "daec4bf8-e7a1-441c-90f9-ecbb4783b589"
   },
   "engines": {
-    "node": ">=10.16.0 <=14.x.x",
-    "npm": "^6.0.0"
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }
