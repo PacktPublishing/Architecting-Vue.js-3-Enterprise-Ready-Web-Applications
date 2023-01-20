@@ -4,7 +4,6 @@
   </div>
 </template>
     
-    <script setup >
+<script setup>
 import HomeOverview from '@/components/templates/HomeOverview.vue';
 </script>
-    

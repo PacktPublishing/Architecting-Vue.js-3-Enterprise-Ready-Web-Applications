@@ -36,13 +36,16 @@
 </template>
 
 <script>
-import { REGISTER } from '../../graphql';
+import { useMutation } from "@vue/apollo-composable";
+import { ref } from "vue";
+import { REGISTER } from "../../graphql";
 
 export default {
-  setup(props) {
-    const email = ref('');
-    const password = ref('');
-    const name = ref('');
+  name: "RegisterComponent",
+  setup() {
+    const email = ref("");
+    const password = ref("");
+    const name = ref("");
 
     const { mutate: registerUser } = useMutation(REGISTER, () => ({
       variables: {

@@ -720,7 +720,7 @@
 </template>
 
 <script setup>
-import Button from '../atoms/Button.vue';
+import Button from "../atoms/Button.vue";
 defineProps({
   photo: { type: Object, default: () => {} },
   status: { type: String, default: 'Loading' },

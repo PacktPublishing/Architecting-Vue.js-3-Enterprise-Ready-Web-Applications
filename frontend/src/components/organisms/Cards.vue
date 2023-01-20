@@ -101,6 +101,13 @@ const getBoardPins = () => {
 
 getBoardPins();
 </script>
+<script >
+export default {
+  name: "CardsComponent",
+};
+
+getBoardPins();
+</script>
 
 
 
