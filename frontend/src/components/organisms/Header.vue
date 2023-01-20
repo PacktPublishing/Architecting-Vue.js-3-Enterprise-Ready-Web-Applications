@@ -3,6 +3,7 @@
     <nav class="h-20">
       <!-- ================================TOP NAVBAR================================== -->
       <div
+        v-if="isDismissed"
         class="
           bg-black
           h-3/4
@@ -15,12 +16,18 @@
         "
       >
         <div>
-          <p class="font-semibold">
+          <p class="font-semibold" data-testid="notification">
             See anything you don't like? Let's edit your home feed!
           </p>
         </div>
         <div class="flex justify-between items-center">
-          <Button appearance="tertiary" label="Not now"> </Button>
+          <Button
+            appearance="tertiary"
+            label="Not now"
+            data-testid="dismissed"
+            @click="isDismissed = !isDismissed"
+          >
+          </Button>
           <Button appearance="tertiary" label="Edit my home feed"></Button>
         </div>
       </div>
@@ -37,7 +44,12 @@
 
         <!-- =============================END=OF==HOME==ICON=================================== -->
         <div class="ml-2">
-          <Button type="menu" label="Create">
+          <Button
+            data-testid="create"
+            type="menu"
+            label="Create"
+            @click="createMenu"
+          >
             <template #icon>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +63,7 @@
               </svg>
             </template>
           </Button>
-          <div class="bg-white w-44 rounded-lg shadow-lg hidden">
+          <div v-if="isMenuOpen" class="bg-white w-44 rounded-lg shadow-lg">
             <div class="py-2">
               <div
                 class="
@@ -83,7 +95,7 @@
           </div>
         </div>
         <!-- -----------------------------------------SEARCH BOX-------------- -->
-        <SearchField />
+        <SearchField data-testid="search" />
         <!-- -----------------------------------------SEARCH BOX-------------- -->
 
         <!-- =================NOTIFICATION==ICON======================== -->
@@ -205,8 +217,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import Button from "../atoms/Button.vue";
 import SearchField from "../molecules/SearchField.vue";
+
+const isMenuOpen = ref(false);
+const isDismissed = ref(true);
+
+function createMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
 </script>
 
 <script >
