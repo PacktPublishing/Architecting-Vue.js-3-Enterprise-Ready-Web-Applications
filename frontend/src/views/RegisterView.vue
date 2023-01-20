@@ -5,6 +5,6 @@
 </template>
     
 <script setup>
-import RegisterOverview from "@/components/templates/RegisterOverview.vue";
+import RegisterOverview from '@/components/templates/RegisterOverview.vue';
 </script>
     

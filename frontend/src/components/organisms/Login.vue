@@ -36,14 +36,14 @@
 </template>
 
 <script setup>
-import { useMutation } from "@vue/apollo-composable";
-import { ref } from "vue";
-import { LOGIN_USER } from "../../graphql";
+import { useMutation } from '@vue/apollo-composable';
+import { ref } from 'vue';
+import { LOGIN_USER } from '../../graphql';
 // import TextField from "../atoms/TextField.vue";
-import Button from "../atoms/Button.vue";
+import Button from '../atoms/Button.vue';
 
-const email = ref("");
-const password = ref("");
+const email = ref('');
+const password = ref('');
 const remember = ref(false);
 let logged = ref();
 
@@ -52,7 +52,7 @@ const { mutate: loginUser } = useMutation(LOGIN_USER, () => ({
     input: {
       identifier: email.value,
       password: password.value,
-      provider: "local",
+      provider: 'local',
     },
   },
 }));
@@ -73,13 +73,13 @@ const login = async () => {
 
 <script >
 export default {
-  name: "LoginComponent",
+  name: 'LoginComponent',
 };
 </script>
 
 <style scoped>
-input[type="email"],
-input[type="password"] {
+input[type='email'],
+input[type='password'] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -89,7 +89,7 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+input[type='submit'] {
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -100,7 +100,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
+input[type='submit']:hover {
   background-color: #45a049;
 }
 

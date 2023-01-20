@@ -7,6 +7,6 @@
 </template>
   
   <script setup>
-import Register from "@/components/organisms/Register.vue";
+import Register from '@/components/organisms/Register.vue';
 </script>
   

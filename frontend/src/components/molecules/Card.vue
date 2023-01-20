@@ -723,17 +723,17 @@
 import Button from "../atoms/Button.vue";
 defineProps({
   photo: { type: Object, default: () => {} },
-  status: { type: String, default: "Loading" },
+  status: { type: String, default: 'Loading' },
 });
 
 function createNewPin() {
-  console.log("It creates new pin");
+  console.log('It creates new pin');
 }
 </script>
 
 <script >
 export default {
-  name: "CardComponent",
+  name: 'CardComponent',
 };
 </script>
 
