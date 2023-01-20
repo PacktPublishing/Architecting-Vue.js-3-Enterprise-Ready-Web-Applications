@@ -1,12 +1,14 @@
 import { gql } from "graphql-tag";
 
 export const LOGIN_USER = gql`
-  mutation loginUser($input: LoginUserInput!) {
-    loginUser(data: $input) {
-      id
-      name
-      email
-      token
+  mutation login($input: UsersPermissionsLoginInput!) {
+    login(input: $input) {
+      jwt
+      user {
+        id
+        email
+        username
+      }
     }
   }
 `;
