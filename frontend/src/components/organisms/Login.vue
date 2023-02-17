@@ -31,32 +31,31 @@
       Logged in successfully
     </p>
 
-    <p v-if="!logged" id="failed" style="color: red">Logged in failed</p>
+    <p v-else-if="logged === undefined"></p>
+
+    <p v-else id="failed" style="color: red">Logged in failed</p>
   </form>
 </template>
 
 <script setup>
-import { useMutation } from '@vue/apollo-composable';
-import { ref } from 'vue';
-import { LOGIN_USER } from '../../graphql';
+import { useMutation } from "@vue/apollo-composable";
+import { ref } from "vue";
+import { LOGIN_USER } from "../../graphql";
 // import TextField from "../atoms/TextField.vue";
-import Button from '../atoms/Button.vue';
-
-const email = ref('');
-const password = ref('');
+import Button from "../atoms/Button.vue";
+const email = ref("");
+const password = ref("");
 const remember = ref(false);
-let logged = ref();
-
+let logged = ref(undefined);
 const { mutate: loginUser } = useMutation(LOGIN_USER, () => ({
   variables: {
     input: {
       identifier: email.value,
       password: password.value,
-      provider: 'local',
+      provider: "local",
     },
   },
 }));
-
 const login = async () => {
   try {
     const user = await loginUser();
@@ -73,13 +72,13 @@ const login = async () => {
 
 <script >
 export default {
-  name: 'LoginComponent',
+  name: "LoginComponent",
 };
 </script>
 
 <style scoped>
-input[type='email'],
-input[type='password'] {
+input[type="email"],
+input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -88,8 +87,7 @@ input[type='password'] {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-input[type='submit'] {
+input[type="submit"] {
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -99,11 +97,9 @@ input[type='submit'] {
   border-radius: 4px;
   cursor: pointer;
 }
-
-input[type='submit']:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
-
 form {
   width: 50%;
   margin: 0 auto;
