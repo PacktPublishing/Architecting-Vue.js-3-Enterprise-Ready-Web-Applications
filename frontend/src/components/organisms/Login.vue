@@ -31,9 +31,7 @@
       Logged in successfully
     </p>
 
-    <p v-else-if="logged === undefined"></p>
-
-    <p v-else id="failed" style="color: red">Logged in failed</p>
+    <p v-if="failed" id="failed" style="color: red">Logged in failed</p>
   </form>
 </template>
 
@@ -46,7 +44,8 @@ import Button from "../atoms/Button.vue";
 const email = ref("");
 const password = ref("");
 const remember = ref(false);
-let logged = ref(undefined);
+let logged = ref(false);
+let failed = ref(false);
 const { mutate: loginUser } = useMutation(LOGIN_USER, () => ({
   variables: {
     input: {
@@ -65,7 +64,7 @@ const login = async () => {
       logged.value = true;
     }
   } catch (error) {
-    logged.value = false;
+    failed.value = true;
   }
 };
 </script>
