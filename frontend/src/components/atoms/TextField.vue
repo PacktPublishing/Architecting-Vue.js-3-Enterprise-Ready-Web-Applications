@@ -1,6 +1,9 @@
 <template>
   <div class="flex w-full flex-col items-start my-2 py-2">
-    <label :for="label" v-if="label">{{ label }}</label>
+    <label
+      v-if="label"
+      :for="label"
+    >{{ label }}</label>
 
     <div
       class="
@@ -18,9 +21,9 @@
 
       <div class="pl-3 w-full">
         <input
-          class="w-full bg-transparent outline-none"
-          ref="field"
           :id="label"
+          ref="field"
+          class="w-full bg-transparent outline-none"
           :type="showPassword ? 'text' : $attrs.type"
           :value="model"
           v-bind="attrsButClassAndType"
@@ -37,7 +40,7 @@
           @keypress="validateKeypress($event, value)"
           @keyup="emitProxy('keyup', $event)"
           @change="emitProxy('change', $event)"
-        />
+        >
       </div>
       <slot name="post-append" />
     </div>

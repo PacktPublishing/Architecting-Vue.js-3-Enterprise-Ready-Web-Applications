@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <form @submit.prevent="login">
     <TextField
@@ -19,13 +20,25 @@
       label="Password"
     />
 
-    <input type="checkbox" id="remember" v-model="remember" />Remember me
+    <input
+      id="remember"
+      v-model="remember"
+      type="checkbox"
+    >Remember me
 
     <div class="w-full pt-5">
-      <Button type="submit" label="Submit" />
+      <Button
+        type="submit"
+        label="Submit"
+      />
     </div>
 
-    <p style="color: green" v-if="logged">Logged in successfully</p>
+    <p
+      v-if="logged"
+      style="color: green"
+    >
+      Logged in successfully
+    </p>
   </form>
 </template>
 

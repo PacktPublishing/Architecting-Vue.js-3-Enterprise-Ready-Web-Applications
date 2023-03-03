@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="pin_container sm:justify-center">
     <div class="card card_small h-[16.25rem] relative">
