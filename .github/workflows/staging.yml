@@ -10,6 +10,7 @@ defaults:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     steps:
       - uses: actions/checkout@v3
       - run: |
@@ -18,6 +19,7 @@ jobs:
 
   unit_test:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     steps:
       - uses: actions/checkout@v3
       - run: |
@@ -26,6 +28,7 @@ jobs:
 
   component_test:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     needs: unit_test
     steps:
       - uses: actions/checkout@v3
@@ -35,6 +38,7 @@ jobs:
 
   backend_server:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     needs: component_test
     steps:
       - uses: actions/checkout@v3
@@ -48,6 +52,7 @@ jobs:
 
   e2e_test:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     needs: backend_server
     steps:
       - uses: actions/checkout@v3
@@ -63,6 +68,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     needs: e2e_test
     steps:
       - uses: actions/checkout@v2
@@ -86,6 +92,7 @@ jobs:
 
   lighthouse:
     runs-on: ubuntu-latest
+    container: node:14-alpine
     needs: deploy
     steps:
       - uses: actions/checkout@v2
