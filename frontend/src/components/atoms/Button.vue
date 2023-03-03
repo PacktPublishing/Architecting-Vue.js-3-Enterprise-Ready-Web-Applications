@@ -1,26 +1,13 @@
 <template>
-  <button
-    v-if="$attrs.type === 'menu'"
-    class="flex"
-  >
-    <p
-      v-if="label"
-      class="font-semibold"
-    >
-      {{ label }}
-    </p>
+  <button v-if="$attrs.type === 'menu'" class="flex" @click="onClick">
+    <p v-if="label" class="font-semibold">{{ label }}</p>
 
     <span v-if="$slots.icon">
       <slot name="icon" />
     </span>
   </button>
 
-  <button
-    v-else
-    :class="classes"
-    :style="style"
-    @click="onClick"
-  >
+  <button v-else :class="classes" :style="style" @click="onClick">
     <span v-if="$slots.icon">
       <slot name="icon" />
     </span>
@@ -29,10 +16,10 @@
 </template>
 
 <script>
-import { reactive, computed } from 'vue';
+import { reactive, computed } from "vue";
 
 export default {
-  name: 'MyButton',
+  name: "MyButton",
 
   props: {
     label: {
@@ -43,15 +30,15 @@ export default {
       type: String,
       validator: function (value) {
         return (
-          ['primary', 'secondary', 'icon', 'tertiary'].indexOf(value) !== -1
+          ["primary", "secondary", "icon", "tertiary"].indexOf(value) !== -1
         );
       },
-      default: 'primary',
+      default: "primary",
     },
     size: {
       type: String,
       validator: function (value) {
-        return ['small', 'medium', 'large'].indexOf(value) !== -1;
+        return ["small", "medium", "large"].indexOf(value) !== -1;
       },
     },
     backgroundColor: {
@@ -59,17 +46,17 @@ export default {
     },
   },
 
-  emits: ['click'],
+  emits: ["click"],
 
   setup(props, { emit }) {
     const classes = computed(() => ({
-      'font-bold text-white rounded-3xl text-sm': true,
+      "font-bold text-white rounded-3xl text-sm": true,
       button: true,
-      'button--primary': props.appearance === 'primary',
-      'button--secondary': props.appearance === 'secondary',
-      'button--icon': props.appearance === 'icon',
-      'button--tertiary': props.appearance === 'tertiary',
-      [`button--${props.size || 'medium'}`]: true,
+      "button--primary": props.appearance === "primary",
+      "button--secondary": props.appearance === "secondary",
+      "button--icon": props.appearance === "icon",
+      "button--tertiary": props.appearance === "tertiary",
+      [`button--${props.size || "medium"}`]: true,
     }));
 
     const style = computed(() => ({
@@ -77,7 +64,7 @@ export default {
     }));
 
     const onClick = () => {
-      emit('click');
+      emit("click");
     };
     props = reactive(props);
     return {
@@ -90,7 +77,7 @@ export default {
 </script>
 <style scoped>
 .button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 3em;

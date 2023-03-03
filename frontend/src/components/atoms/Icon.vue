@@ -9,6 +9,11 @@
 
 <script setup>
 </script>
+<script >
+export default {
+  name: "IconComponent",
+};
+</script>
 
 <style>
 </style>

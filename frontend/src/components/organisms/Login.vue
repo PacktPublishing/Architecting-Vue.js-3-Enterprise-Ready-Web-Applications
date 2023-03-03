@@ -1,7 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <form @submit.prevent="login">
-    <TextField
+  <form id="loginForm" @submit.prevent="login">
+    <input
+      id="emailField"
       v-model="email"
       required
       type="email"
@@ -10,7 +11,8 @@
       placeholder="Enter your email address"
     />
 
-    <TextField
+    <input
+      id="passwordField"
       v-model="password"
       required
       minlength="6"
@@ -20,60 +22,63 @@
       label="Password"
     />
 
-    <input
-      id="remember"
-      v-model="remember"
-      type="checkbox"
-    >Remember me
+    <input id="remember" v-model="remember" type="checkbox" />Remember me
 
     <div class="w-full pt-5">
-      <Button
-        type="submit"
-        label="Submit"
-      />
+      <Button id="submitButton" type="submit" label="Submit" />
     </div>
 
-    <p
-      v-if="logged"
-      style="color: green"
-    >
+    <p v-if="logged" id="loggedIn" style="color: green">
       Logged in successfully
     </p>
+
+    <p v-if="failed" id="failed" style="color: red">Logged in failed</p>
   </form>
 </template>
 
 <script setup>
-import { useMutation } from '@vue/apollo-composable';
-import { ref } from 'vue';
-import { LOGIN_USER } from '../../graphql';
-import TextField from '../atoms/TextField.vue';
-import Button from '../atoms/Button.vue';
-
-const email = ref('');
-const password = ref('');
+import { useMutation } from "@vue/apollo-composable";
+import { ref } from "vue";
+import { LOGIN_USER } from "../../graphql";
+// import TextField from "../atoms/TextField.vue";
+import Button from "../atoms/Button.vue";
+const email = ref("");
+const password = ref("");
 const remember = ref(false);
 let logged = ref(false);
-
+let failed = ref(false);
 const { mutate: loginUser } = useMutation(LOGIN_USER, () => ({
   variables: {
-    email: email,
-    password: password,
-    remember,
+    input: {
+      identifier: email.value,
+      password: password.value,
+      provider: "local",
+    },
   },
 }));
-
-const login = () => {
-  const user = loginUser();
-  if (user) {
-    // Save State and Redirect to Dashboard
-    logged.value = true;
+const login = async () => {
+  try {
+    const user = await loginUser();
+    // console.log(user);
+    if (user) {
+      // Save State and Redirect to Dashboard
+      logged.value = true;
+    }
+  } catch (error) {
+    failed.value = true;
   }
 };
 </script>
 
+<script >
+export default {
+  name: "LoginComponent",
+};
+</script>
+
 <style scoped>
-input[type='email'],
-input[type='password'] {
+input[type="email"],
+input[type="password"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -82,8 +87,7 @@ input[type='password'] {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-input[type='submit'] {
+input[type="submit"] {
   width: 100%;
   background-color: #4caf50;
   color: white;
@@ -93,11 +97,9 @@ input[type='submit'] {
   border-radius: 4px;
   cursor: pointer;
 }
-
-input[type='submit']:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
-
 form {
   width: 50%;
   margin: 0 auto;

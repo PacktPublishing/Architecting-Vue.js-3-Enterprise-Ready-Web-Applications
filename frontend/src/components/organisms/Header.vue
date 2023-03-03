@@ -4,10 +4,11 @@
     <nav class="h-20">
       <!-- ================================TOP NAVBAR================================== -->
       <div
+        v-if="isDismissed"
         class="bg-black h-3/4 px-4 py-2 text-white flex justify-between items-center"
       >
         <div>
-          <p class="font-semibold">
+          <p class="font-semibold" data-testid="notification">
             See anything you don't like? Let's edit your home feed!
           </p>
         </div>
@@ -15,11 +16,11 @@
           <Button
             appearance="tertiary"
             label="Not now"
-          />
-          <Button
-            appearance="tertiary"
-            label="Edit my home feed"
-          />
+            data-testid="dismissed"
+            @click="isDismissed = !isDismissed"
+          >
+          </Button>
+          <Button appearance="tertiary" label="Edit my home feed"></Button>
         </div>
       </div>
       <!-- ==============================END=OF=TOP NAVBAR================================== -->
@@ -36,8 +37,10 @@
         <!-- =============================END=OF==HOME==ICON=================================== -->
         <div class="ml-2">
           <Button
+            data-testid="create"
             type="menu"
             label="Create"
+            @click="createMenu"
           >
             <template #icon>
               <svg
@@ -52,27 +55,23 @@
               </svg>
             </template>
           </Button>
-          <div class="bg-white w-44 rounded-lg shadow-lg hidden">
+          <div v-if="isMenuOpen" class="bg-white w-44 rounded-lg shadow-lg">
             <div class="py-2">
               <div
                 class="hover:bg-slate-100 transition duration-300 mx-2 px-2 py-1.5 rounded-lg"
               >
-                <p class="text-black font-semibold text-md">
-                  Create Idea Pin
-                </p>
+                <p class="text-black font-semibold text-md">Create Idea Pin</p>
               </div>
               <div
                 class="hover:bg-slate-100 transition duration-300 mx-2 px-2 py-1.5 rounded-lg"
               >
-                <p class="text-black font-semibold text-md">
-                  Create Pin
-                </p>
+                <p class="text-black font-semibold text-md">Create Pin</p>
               </div>
             </div>
           </div>
         </div>
         <!-- -----------------------------------------SEARCH BOX-------------- -->
-        <SearchField />
+        <SearchField data-testid="search" />
         <!-- -----------------------------------------SEARCH BOX-------------- -->
 
         <!-- =================NOTIFICATION==ICON======================== -->
@@ -91,9 +90,7 @@
             />
           </svg>
           <div class="bg-red-500 absolute top-0.5 right-0 rounded-md">
-            <p class="text-white text-xs font-semibold">
-              99+
-            </p>
+            <p class="text-white text-xs font-semibold">99+</p>
           </div>
         </div>
         <!-- ===========END==OF====NOTIFICATION==ICON======================== -->
@@ -125,9 +122,7 @@
             class="w-2/4 h-2/4 rounded-full flex justify-center items-center"
             style="background-color: rgb(180, 175, 175)"
           >
-            <p class="text-xs">
-              s
-            </p>
+            <p class="text-xs">s</p>
           </div>
         </div>
         <!-- ===========================================================END==OF==USER===ICON================== -->
@@ -152,9 +147,7 @@
           <div class="bg-black w-16 rounded-lg shadow-lg hidden">
             <div class="py-2">
               <div class="px-2 py-1.5 rounded-lg">
-                <p class="text-white text-xs">
-                  account and more options
-                </p>
+                <p class="text-white text-xs">account and more options</p>
               </div>
             </div>
           </div>
@@ -168,8 +161,22 @@
 </template>
 
 <script setup>
-import Button from '../atoms/Button.vue';
-import SearchField from '../molecules/SearchField.vue';
+import { ref } from "vue";
+import Button from "../atoms/Button.vue";
+import SearchField from "../molecules/SearchField.vue";
+
+const isMenuOpen = ref(false);
+const isDismissed = ref(true);
+
+function createMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
+</script>
+
+<script >
+export default {
+  name: "HeaderComponent",
+};
 </script>
 <style scoped>
 </style>

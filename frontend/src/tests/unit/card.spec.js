@@ -1,5 +1,5 @@
 import { render, fireEvent } from "@testing-library/vue";
-import { vi, expect } from "vitest";
+import { expect, test } from "vitest";
 import Card from "../../components/molecules/Card.vue";
 
 test("displays a card with success status", async () => {
@@ -19,7 +19,7 @@ test("displays a card with error status", async () => {
     },
   });
   const card = getByText("An error occurred");
-  expect(card.textContent).toEqual(" An error occurred ");
+  expect(card.textContent).toEqual("An error occurred");
 });
 
 test("displays a card with loading status", async () => {
@@ -29,7 +29,7 @@ test("displays a card with loading status", async () => {
     },
   });
   const card = getByText("Loading photo...");
-  expect(card.textContent).toEqual(" Loading photo... ");
+  expect(card.textContent).toEqual("Loading photo...");
 });
 
 test("clicks a create pin button", async () => {

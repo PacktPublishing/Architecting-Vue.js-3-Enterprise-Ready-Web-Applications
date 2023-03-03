@@ -1,21 +1,9 @@
 <template>
   <div class="flex w-full flex-col items-start my-2 py-2">
-    <label
-      v-if="label"
-      :for="label"
-    >{{ label }}</label>
+    <label v-if="label" :for="label">{{ label }}</label>
 
     <div
-      class="
-        w-full
-        bg-[#efefef]
-        py-2
-        rounded-full
-        flex
-        hover:bg-slate-200
-        transition
-        duration-300
-      "
+      class="w-full bg-[#efefef] py-2 rounded-full flex hover:bg-slate-200 transition duration-300"
     >
       <slot name="prepend" />
 
@@ -40,7 +28,7 @@
           @keypress="validateKeypress($event, value)"
           @keyup="emitProxy('keyup', $event)"
           @change="emitProxy('change', $event)"
-        >
+        />
       </div>
       <slot name="post-append" />
     </div>
@@ -48,7 +36,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, useAttrs } from 'vue';
+import { ref, onMounted, useAttrs } from "vue";
 
 const showPassword = ref(false);
 const isFocused = ref(false);
@@ -57,13 +45,13 @@ const field = ref(null);
 const $attrs = useAttrs();
 
 const emit = defineEmits([
-  'keydown',
-  'click',
-  'keypress',
-  'keyup',
-  'change',
-  'blur',
-  'focus',
+  "keydown",
+  "click",
+  "keypress",
+  "keyup",
+  "change",
+  "blur",
+  "focus",
 ]);
 defineProps({
   baseClass: String,
@@ -74,9 +62,9 @@ defineProps({
   enterkeyhint: String,
 });
 
-const togglePasswordType = () => {
-  showPassword.value = !showPassword.value;
-};
+// const togglePasswordType = () => {
+//   showPassword.value = !showPassword.value;
+// };
 
 onMounted(() => {
   checkAutofocusField();
@@ -93,39 +81,39 @@ function checkAutofocusField() {
   field.value?.focus();
 }
 
-function focus() {
-  if (field.value) {
-    field.value.focus();
-    field.value.select();
-  }
-}
+// function focus() {
+//   if (field.value) {
+//     field.value.focus();
+//     field.value.select();
+//   }
+// }
 
-function onIconClick(type) {
-  switch (type) {
-    case 'showPassword':
-      showPassword.value = !showPassword.value;
-      break;
-    case 'clear':
-      emitProxy('update:value', '');
-  }
+// function onIconClick(type) {
+//   switch (type) {
+//     case 'showPassword':
+//       showPassword.value = !showPassword.value;
+//       break;
+//     case 'clear':
+//       emitProxy('update:value', '');
+//   }
 
-  emitProxy('icon:click');
-}
+//   emitProxy('icon:click');
+// }
 function onAnimationStart(event) {
-  if (event.animationName === 'onAutoFillStart') {
+  if (event.animationName === "onAutoFillStart") {
     isFocused.value = true;
-  } else if (event.animationName === 'onAutoFillEnd') {
+  } else if (event.animationName === "onAutoFillEnd") {
     isFocused.value = false;
   }
 }
 
 function onFocusIn() {
-  emitProxy('focus');
+  emitProxy("focus");
   isFocused.value = true;
 }
 
 function onFocusOut(event) {
-  emitProxy('blur', event);
+  emitProxy("blur", event);
   isFocused.value = false;
 }
 

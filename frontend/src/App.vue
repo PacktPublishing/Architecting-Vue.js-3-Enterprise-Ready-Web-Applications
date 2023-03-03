@@ -1,10 +1,12 @@
 <script setup>
-import HomeOverview from './components/templates/HomeOverview.vue';
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <HomeOverview />
+  <RouterView />
 </template>
 
 <style>
 </style>
+
+
