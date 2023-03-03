@@ -2,7 +2,7 @@ name: PRODUCTION - Deploy container to AWS App Runner # Name of the workflow
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch: # Allow manual invocation of the workflow
 env:
   ENVIRONMENT_NAME: production
