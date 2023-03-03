@@ -2,7 +2,11 @@ on:
  push:
    branches:
      - chapter-12
- 
+
+defaults:
+  run:
+    working-directory: frontend
+
 jobs:
  lint:
    runs-on: ubuntu-latest
