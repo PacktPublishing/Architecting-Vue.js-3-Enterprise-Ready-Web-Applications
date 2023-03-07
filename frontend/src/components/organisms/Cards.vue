@@ -80,6 +80,10 @@ import { useQuery } from "@vue/apollo-composable";
 import { toRefs } from "vue";
 import { GET_PHOTOS } from "../../graphql";
 import Card from "../molecules/Card.vue";
+import apolloClient from "../../plugins/apollo.config";
+
+import { provideApolloClient } from "@vue/apollo-composable";
+provideApolloClient(apolloClient);
 
 const props = defineProps({
   board: {
@@ -102,7 +106,7 @@ const getBoardPins = () => {
 
 getBoardPins();
 </script>
-<script >
+<script>
 export default {
   name: "CardsComponent",
 };
