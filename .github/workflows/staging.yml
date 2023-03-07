@@ -38,7 +38,7 @@ jobs:
 
   e2e_test:
     runs-on: ubuntu-latest
-    container: node:14-alpine
+    # container: node:14-alpine
     needs: component_test
     steps:
       - name: Checkout
