@@ -48,10 +48,20 @@ jobs:
         working-directory: backend
         run: nohup yarn develop &
 
+      # - uses: actions/checkout@v3
+      # - name: Run Frontend Dev server
+      #   run: |
+      #     yarn
+      #     yarn dev
       - name: Run E2E test
-        run: |
-          yarn
-          yarn test:e2e:ci
+        uses: cypress-io/github-action@v5
+        with:
+          record: true
+          start: yarn dev, yarn test:e2e:ci --prefix frontend/nix-app
+          wait-on: http://localhost:3000, http://localhost:1337
+        # run: |
+        #   yarn
+        #   yarn test:e2e:ci
 
   deploy:
     runs-on: ubuntu-latest
