@@ -36,31 +36,18 @@ jobs:
           yarn
           yarn test:component
 
-  backend_server:
+  e2e_test:
     runs-on: ubuntu-latest
     container: node:14-alpine
     needs: component_test
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Backend Dev server
-        run: pub get
-        working-directory: backend
-      - uses: actions/checkout@v3
-      - run: |
-          yarn
-          yarn develop
+      - name: Checkout
+        uses: actions/checkout@v3
 
-  e2e_test:
-    runs-on: ubuntu-latest
-    container: node:14-alpine
-    needs: backend_server
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run Frontend Dev server
-        run: |
-          yarn
-          yarn dev
-      - uses: actions/checkout@v3
+      - name: Run backend nohup
+        working-directory: backend
+        run: nohup yarn develop &
+
       - name: Run E2E test
         run: |
           yarn
