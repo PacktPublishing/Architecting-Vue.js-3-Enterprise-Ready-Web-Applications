@@ -8,8 +8,7 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test:unit": "vitest",
-    "test:component": "jest"
+    "test:unit": "vitest"
   },
   "dependencies": {
     "@apollo/client": "^3.6.4",
