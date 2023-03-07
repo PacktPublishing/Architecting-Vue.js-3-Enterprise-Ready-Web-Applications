@@ -57,6 +57,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           record: true
+          install-command: yarn --silent
           start: yarn dev, yarn test:e2e:ci --prefix frontend/nix-app
           wait-on: http://localhost:3000, http://localhost:1337
         # run: |
