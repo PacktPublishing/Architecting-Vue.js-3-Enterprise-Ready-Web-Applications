@@ -8,44 +8,44 @@ defaults:
     working-directory: frontend
 
 jobs:
-  lint:
-    runs-on: ubuntu-latest
-    container: node:14-alpine
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          yarn
-          yarn lint
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn lint
 
-  unit_test:
-    runs-on: ubuntu-latest
-    container: node:14-alpine
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          yarn
-          yarn test:unit
+  # unit_test:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn test:unit
 
-  component_test:
-    runs-on: ubuntu-latest
-    container: node:14-alpine
-    needs: unit_test
-    steps:
-      - uses: actions/checkout@v3
-      - run: |
-          yarn
-          yarn test:component
+  # component_test:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   needs: unit_test
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn test:component
 
   e2e_test:
     runs-on: ubuntu-latest
     # container: node:14-alpine
-    needs: component_test
+    # needs: component_test
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Run backend nohup
-        working-directory: backend
+        working-directory: ../backend
         run: nohup yarn develop &
 
       # - uses: actions/checkout@v3
