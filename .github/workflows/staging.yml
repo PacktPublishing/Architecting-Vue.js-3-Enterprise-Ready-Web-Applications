@@ -62,7 +62,7 @@ jobs:
           install-command: yarn --silent
           start: yarn dev
           config-file: frontend/cypress.config.js
-          wait-on: http://localhost:3000, http://localhost:1337
+          wait-on: http://localhost:1337
           run: |
             yarn test:e2e:ci
 
