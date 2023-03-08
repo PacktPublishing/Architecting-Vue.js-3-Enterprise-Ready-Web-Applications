@@ -63,9 +63,8 @@ jobs:
           start: yarn dev
           config-file: frontend/cypress.config.js
           wait-on: http://localhost:3000, http://localhost:1337
-        # run: |
-        #   yarn
-        #   yarn test:e2e:ci
+          run: |
+            yarn test:e2e:ci
 
   deploy:
     runs-on: ubuntu-latest
