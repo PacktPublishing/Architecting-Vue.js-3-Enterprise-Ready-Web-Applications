@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run backend nohup
-        working-directory: ../backend
+        working-directory: /backend
         run: nohup yarn develop &
 
       # - uses: actions/checkout@v3
