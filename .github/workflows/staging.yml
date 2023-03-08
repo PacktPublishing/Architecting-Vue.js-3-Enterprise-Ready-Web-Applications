@@ -58,7 +58,7 @@ jobs:
         with:
           record: true
           install-command: yarn --silent
-          start: yarn dev, yarn test:e2e:ci --prefix frontend/nix-app
+          start: yarn dev, yarn test:e2e:ci
           wait-on: http://localhost:3000, http://localhost:1337
         # run: |
         #   yarn
