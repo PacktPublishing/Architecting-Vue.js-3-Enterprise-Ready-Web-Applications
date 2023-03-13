@@ -6,28 +6,30 @@ on:
   workflow_dispatch: # Allow manual invocation of the workflow
 env:
   ENVIRONMENT_NAME: production
-  ECR_REPOSITORY_NAME: vue-pinterest-demo
-jobs:  
+  ECR_REPOSITORY_NAME: vue-pinterest-demo-2
+  PACKAGE_PATH: frontend
+  WORKING_DIR: /usr/src/
+jobs:
   deploy:
     runs-on: ubuntu-latest
-    
-    steps:       
+
+    steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          
+
       - name: Configure AWS credentials
         id: aws-credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}     
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Login to Amazon ECR
         id: ecr-login
-        uses: aws-actions/amazon-ecr-login@v1        
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
@@ -38,20 +40,20 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"  
-          
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+
       - name: Deploy to App Runner
         id: deploy-app
-        uses: awslabs/amazon-app-runner-deploy@main        
+        uses: awslabs/amazon-app-runner-deploy@main
         with:
           service: erp-app-${{ env.ENVIRONMENT_NAME }}
-          image: ${{ steps.build-image.outputs.image }}          
-          access-role-arn: ${{ secrets.ROLE_ARN }}         
+          image: ${{ steps.build-image.outputs.image }}
+          access-role-arn: ${{ secrets.ROLE_ARN }}
           region: ${{ secrets.AWS_REGION }}
-          cpu : 1
-          memory : 2
+          cpu: 1
+          memory: 2
           port: 80
           wait-for-service-stability: false
-      
+
       - name: App Runner output
         run: echo "App runner output ${{ steps.deploy-app.outputs.service-id }}"
