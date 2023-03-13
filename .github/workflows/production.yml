@@ -9,6 +9,11 @@ env:
   ECR_REPOSITORY_NAME: vue-pinterest-demo-2
   PACKAGE_PATH: frontend
   WORKING_DIR: /usr/src/
+
+defaults:
+  run:
+    working-directory: frontend
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
