@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # Allow manual invocation of the workflow
 env:
   ENVIRONMENT_NAME: production
-  ECR_REPOSITORY_NAME: vue-pinterest-demo-2
+  ECR_REPOSITORY_NAME: vue-pinterest-demo-3
   PACKAGE_PATH: frontend
   WORKING_DIR: /usr/src/
 
