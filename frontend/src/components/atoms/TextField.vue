@@ -3,16 +3,7 @@
     <label v-if="label" :for="label">{{ label }}</label>
 
     <div
-      class="
-        w-full
-        bg-[#efefef]
-        py-2
-        rounded-full
-        flex
-        hover:bg-slate-200
-        transition
-        duration-300
-      "
+      class="w-full bg-[#efefef] py-2 rounded-full flex hover:bg-slate-200 transition duration-300"
     >
       <slot name="prepend" />
 

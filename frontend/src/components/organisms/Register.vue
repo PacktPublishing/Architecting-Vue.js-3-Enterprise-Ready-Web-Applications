@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <form @submit.prevent="register">
     <TextField
@@ -27,7 +28,7 @@
       maxlength="50"
       placeholder="Enter your password"
       label="Password"
-    ></TextField>
+    />
 
     <div class="flex justify-center my-9 w-full">
       <Button>Register</Button>

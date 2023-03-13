@@ -5,8 +5,8 @@ module.exports = defineConfig({
 
   env: {
     // HINT: here we read these keys from .env file, feel free to remove the items that you don't need
-    baseUrl: "http://localhost:3000",
-    apiUrl: "http://localhost:1337",
+    baseUrl: process.env.FE_URL ?? "http://localhost:3000",
+    apiUrl: process.env.BE_URL ?? "http://localhost:1337",
     email: "admin@test.com",
     password: "Admin111",
   },
@@ -20,6 +20,6 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
 
-    baseUrl: "http://localhost:3000",
+    baseUrl: process.env.FE_URL ?? "http://localhost:3000",
   },
 });

@@ -1,0 +1,105 @@
+on:
+  push:
+    branches:
+      - chapter-12
+
+defaults:
+  run:
+    working-directory: frontend
+
+jobs:
+  # lint:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn lint
+
+  # unit_test:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn test:unit
+
+  # component_test:
+  #   runs-on: ubuntu-latest
+  #   container: node:14-alpine
+  #   needs: unit_test
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - run: |
+  #         yarn
+  #         yarn test:component
+
+  e2e_test:
+    runs-on: ubuntu-latest
+    # container: node:14-alpine
+    # needs: component_test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run backend nohup
+        working-directory: backend
+        run: |
+          nohup yarn
+          nohup yarn develop &
+
+      # - uses: actions/checkout@v3
+      # - name: Run Frontend Dev server
+      #   run: |
+      #     yarn
+      #     yarn dev
+      - name: Run E2E test
+        uses: cypress-io/github-action@v5
+        with:
+          record: true
+          install-command: yarn --silent
+          start: yarn dev
+          config-file: frontend/cypress.config.js
+          wait-on: http://localhost:1337
+          run: |
+            yarn test:e2e:ci
+
+  deploy:
+    runs-on: ubuntu-latest
+    container: node:14-alpine
+    needs: e2e_test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.2
+        id: deploy-to-netlify
+        with:
+          publish-dir: "./dist"
+          production-branch: chapter-12
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        timeout-minutes: 1
+    outputs:
+      preview-url: ${{ steps.deploy-to-netlify.outputs.deploy-url }}
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    container: node:14-alpine
+    needs: deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Lighthouse on urls and validate with lighthouserc
+        uses: treosh/lighthouse-ci-action@v7
+        with:
+          urls: |
+            ${{ needs.deploy.outputs.preview-url }}
+          budgetPath: ./budget.json
+          runs: 3

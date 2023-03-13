@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div v-if="status === 'loading'">Loading photo...</div>
   <div v-else-if="status === 'error'">An error occurred</div>
@@ -10,22 +11,7 @@
       class="w-full h-full object-cover rounded-2xl"
     />
     <div
-      class="
-        absolute
-        top-0
-        left-0
-        h-full
-        w-full
-        px-3
-        py-3
-        hover:opacity-100
-        opacity-0
-        transition
-        duration-300
-        rounded-2xl
-        flex flex-col
-        justify-between
-      "
+      class="absolute top-0 left-0 h-full w-full px-3 py-3 hover:opacity-100 opacity-0 transition duration-300 rounded-2xl flex flex-col justify-between"
       style="background-color: rgba(0, 0, 0, 0.6)"
     >
       <div class="flex justify-between">
@@ -47,33 +33,12 @@
           <!-- ================dropdown==================== -->
 
           <div
-            class="
-              bg-white
-              w-[25rem]
-              h-[34.375rem]
-              z-20
-              absolute
-              top-32
-              left-10
-              overflow-hidden
-              rounded-2xl
-              hidden
-            "
+            class="bg-white w-[25rem] h-[34.375rem] z-20 absolute top-32 left-10 overflow-hidden rounded-2xl hidden"
           >
             <div class="h-[150px] bg-white w-full px-4 rounded-2xl pt-5">
               <h4 class="font-semibold text-center">Save</h4>
               <div
-                class="
-                  w-full
-                  bg-[#efefef]
-                  py-4
-                  rounded-full
-                  flex
-                  hover:bg-slate-200
-                  transition
-                  duration-300
-                  mt-5
-                "
+                class="w-full bg-[#efefef] py-4 rounded-full flex hover:bg-slate-200 transition duration-300 mt-5"
               >
                 <input
                   type="text"
@@ -85,25 +50,11 @@
             <div class="h-full overflow-y-auto px-3">
               <p class="mt-4">Quick save and organize later</p>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,31 +73,16 @@
                   <p class="font-semibold ml-3 text-white">Profile</p>
                 </div>
 
-                <Button appearance="secondary" label="Save"></Button>
+                <Button appearance="secondary" label="Save" />
               </div>
 
               <p class="mb-3">Save to board</p>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                  z-20
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3 z-20"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,29 +98,15 @@
                   <p class="font-semibold ml-3 text-white">Profile</p>
                 </div>
 
-                <Button appearance="secondary" label="Save"></Button>
+                <Button appearance="secondary" label="Save" />
               </div>
               <p class="mb-3">Suggestions</p>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -200,28 +122,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -237,28 +145,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -274,28 +168,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -311,28 +191,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -348,28 +214,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -385,28 +237,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -422,28 +260,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -459,28 +283,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -496,28 +306,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -533,28 +329,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -570,28 +352,14 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
               <div
-                class="
-                  bg-transparent
-                  hover:bg-slate-400
-                  flex
-                  justify-between
-                  mb-3
-                "
+                class="bg-transparent hover:bg-slate-400 flex justify-between mb-3"
               >
                 <div class="flex">
                   <div
-                    class="
-                      w-16
-                      h-16
-                      rounded-xl
-                      bg-gray-800
-                      flex
-                      justify-center
-                      items-center
-                    "
+                    class="w-16 h-16 rounded-xl bg-gray-800 flex justify-center items-center"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -607,7 +375,7 @@
                   <p class="font-semibold ml-3 text-white">Planet</p>
                 </div>
 
-                <Button appearance="secondary" label="Create"></Button>
+                <Button appearance="secondary" label="Create" />
               </div>
             </div>
           </div>
@@ -615,28 +383,12 @@
           <div class="bg-white w-44 rounded-lg shadow-lg hidden">
             <div class="py-2">
               <div
-                class="
-                  hover:bg-slate-100
-                  transition
-                  duration-300
-                  mx-2
-                  px-2
-                  py-1.5
-                  rounded-lg
-                "
+                class="hover:bg-slate-100 transition duration-300 mx-2 px-2 py-1.5 rounded-lg"
               >
                 <p class="text-black font-semibold text-md">Create Idea Pin</p>
               </div>
               <div
-                class="
-                  hover:bg-slate-100
-                  transition
-                  duration-300
-                  mx-2
-                  px-2
-                  py-1.5
-                  rounded-lg
-                "
+                class="hover:bg-slate-100 transition duration-300 mx-2 px-2 py-1.5 rounded-lg"
               >
                 <p class="text-black font-semibold text-md">Create Pin</p>
               </div>
@@ -668,15 +420,7 @@
 
         <div class="flex justify-betwe">
           <div
-            class="
-              bg-red-500
-              w-8
-              h-8
-              rounded-full
-              flex
-              justify-center
-              items-center
-            "
+            class="bg-red-500 w-8 h-8 rounded-full flex justify-center items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -691,16 +435,7 @@
           </div>
 
           <div
-            class="
-              bg-red-500
-              ml-2
-              w-8
-              h-8
-              rounded-full
-              flex
-              justify-center
-              items-center
-            "
+            class="bg-red-500 ml-2 w-8 h-8 rounded-full flex justify-center items-center"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -723,17 +458,17 @@
 import Button from "../atoms/Button.vue";
 defineProps({
   photo: { type: Object, default: () => {} },
-  status: { type: String, default: 'Loading' },
+  status: { type: String, default: "Loading" },
 });
 
 function createNewPin() {
-  console.log('It creates new pin');
+  console.log("It creates new pin");
 }
 </script>
 
 <script >
 export default {
-  name: 'CardComponent',
+  name: "CardComponent",
 };
 </script>
 

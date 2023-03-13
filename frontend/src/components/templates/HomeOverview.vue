@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Header></Header>
+    <Header />
     <section class="mt-20">
       <Cards />
     </section>

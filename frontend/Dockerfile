@@ -8,6 +8,8 @@ WORKDIR /app
 # Copy important root files to the builder image.
 COPY package*.json ./
 
+RUN npm cache verify
+
 # Install production dependencies.
 RUN npm install 
 
