@@ -9,7 +9,7 @@ This is the code repository for [Architecting Vue.js 3 Enterprise-Ready Web Appl
 ## What is this book about?
 Building enterprise-ready Vue.js apps entails following best practices for creating high-performance and scalable applications. Complete with step-by-step explanations and best practices outlined, this Vue.js book is a must-read for any developer who works with a large Vue.js codebase where performance and scalability are indispensable.
 
-This book covers the following exciting features: <First 5 What you'll learn points>
+This book covers the following exciting features:
 * Scale your app’s performance in Vue.js 3 using best practices
 * Implement testing strategies for large-scale Vue.js codebase
 * Manage large file structures using the micro frontend architecture
