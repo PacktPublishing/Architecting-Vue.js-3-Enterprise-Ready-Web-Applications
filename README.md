@@ -39,7 +39,7 @@ lint:
 **Following is what you need for this book:**
 The Vue.js 3 book is for Vue.js developers and professional frontend developers who want to build high-performance, production-grade, and highly scalable enterprise Vue.js apps from design to deployment. The book assumes working knowledge of Vue.js and JavaScript programming.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-1).
+With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
 
 ### Software and Hardware List
 
