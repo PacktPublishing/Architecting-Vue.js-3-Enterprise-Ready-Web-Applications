@@ -59,3 +59,8 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ## Get to Know the Author
 **Solomon Eseme**
 is an experienced Software Engineer, Content Creator, and Founder of, Mastering Backend with 5+ years of experience working across multiple frontend and backend technologies to design and build high-performing, scalable and innovative applications following best practices and industry standards in a variety of workplaces from start-ups to larger consultancies. He started using Vue since it was first integrated with Laravel and never looked back. He is also a panelist on the ViewsOnVue podcast and technical writer with VueJs Developers.
+
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801073905">https://packt.link/free-ebook/9781801073905 </a> </p>
