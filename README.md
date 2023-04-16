@@ -58,7 +58,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 
 ## Get to Know the Author
 **Solomon Eseme**
-is an experienced Software Engineer, Content Creator, and Founder of, Mastering Backend with 5+ years of experience working across multiple frontend and backend technologies to design and build high-performing, scalable and innovative applications following best practices and industry standards in a variety of workplaces from start-ups to larger consultancies. He started using Vue since it was first integrated with Laravel and never looked back. He is also a panelist on the ViewsOnVue podcast and technical writer with VueJs Developers.
+is an experienced Software Engineer, Content Creator, and Founder of [Mastering Backend](https://masteringbackend.com?source=packt_github) with 5+ years of experience working across multiple frontend and backend technologies to design and build high-performing, scalable and innovative applications following best practices and industry standards in a variety of workplaces from start-ups to larger consultancies. He started using Vue since it was first integrated with Laravel and never looked back. He is also a panelist on the ViewsOnVue podcast and technical writer with VueJs Developers.
 
 ### Download a free PDF
 
